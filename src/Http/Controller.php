@@ -3,9 +3,9 @@
 namespace ArtisanSdk\Blueprint\Http;
 
 use ArtisanSdk\Blueprint\Service;
-use Illuminate\Routing\Controller;
+use Illuminate\Routing\Controller as BaseController;
 
-class Controller extends Controller
+class Controller extends BaseController
 {
     /**
      * Show the API Blueprint documentation.

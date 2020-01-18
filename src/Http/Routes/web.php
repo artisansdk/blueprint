@@ -1,3 +1,3 @@
 <?php
 
-Route::get(config('blueprints.route'), config('blueprints.action'))->as(config('blueprints.name'));
+Route::get(config('blueprint.path'), config('blueprint.action'))->name(config('blueprint.route'));

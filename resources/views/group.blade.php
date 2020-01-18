@@ -7,7 +7,7 @@
     <div class="panel-body">
         {!! $resourceGroup->descriptionHtml !!}
         @foreach($resourceGroup->resources as $resource)
-            @include('blueprint::resource')
+            @include('blueprint::resource', ['resource' => $resource])
         @endforeach
     </div>
 </div>

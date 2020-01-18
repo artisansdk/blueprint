@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('vendor/blueprint/css/app.css') }}" rel="stylesheet">
-    <link href="{{ mix('vendor/blueprint/css/blueprint.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/blueprint/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/blueprint/css/blueprint.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -73,8 +73,8 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ mix('vendor/blueprint/js/app.js') }}"></script>
-<script src="{{ mix('vendor/blueprint/js/blueprint.js') }}"></script>
+<script src="{{ asset('vendor/blueprint/js/app.js') }}"></script>
+<script src="{{ asset('vendor/blueprint/js/blueprint.js') }}"></script>
 
 </body>
 </html>

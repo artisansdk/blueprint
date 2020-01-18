@@ -17,7 +17,7 @@ class Provider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'blueprint');
 
-        if (config('blueprint.route')) {
+        if (config('blueprint.path')) {
             $this->loadRoutesFrom(__DIR__.'/Http/Routes/web.php');
         }
 
@@ -49,7 +49,7 @@ class Provider extends ServiceProvider
             return new Drafter(config('blueprint.drafter'));
         });
 
-        $this->app->singleton(Parsedown::class, Parser::class);
+        $this->app->singleton(Parsedown::class);
 
         $this->mergeConfigFrom(
             __DIR__.'/../config/blueprint.php', 'blueprint'

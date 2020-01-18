@@ -44,7 +44,7 @@ class Service
      * @param \Hmaus\Reynaldo\Parser\RefractParser $refractor
      * @param \ArtisanSdk\Blueprint\Parser $parser
      */
-    public function __construct(Drafter $drafter, RefactParser $refractor, Parser $parser)
+    public function __construct(Drafter $drafter, RefractParser $refractor, Parser $parser)
     {
         $this->drafter = $drafter;
         $this->refractor = $refractor;

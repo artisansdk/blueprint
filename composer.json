@@ -38,7 +38,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/drakakisgeo/reynaldo"
+            "url": "https://github.com/dalabarge/reynaldo"
         }
     ],
     "scripts": {

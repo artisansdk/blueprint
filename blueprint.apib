@@ -1,18 +1,20 @@
 FORMAT: 1A
-HOST: https://api.tasks.test
+HOST: https://api.example.test
 
-# Advanced Action API
+# Example Tasks API
 A resource action is – in fact – a state transition. This API example
 demonstrates an action - state transition - to another resource.
 
 
-# Tasks [/tasks/tasks{?status,priority}]
+# Group Tasks
+
+## Collection [/tasks{?status,priority}]
 
 + Parameters
-    + status (string)
-    + priority (number)
+    + status (string, optional)
+    + priority (number, optional)
 
-## List All Tasks [GET]
+### List All Tasks [GET]
 
 + Response 200 (application/json)
 
@@ -31,7 +33,9 @@ demonstrates an action - state transition - to another resource.
             }
         ]
 
-## Retrieve Task [GET /task/{id}]
+## Resource [/tasks/{id}]
+
+### Retrieve Task [GET]
 This is a state transition to another resource.
 
 + Parameters
@@ -46,7 +50,7 @@ This is a state transition to another resource.
             "type": "task"
         }
 
-## Delete Task [DELETE /task/{id}]
+### Delete Task [DELETE]
 
 + Parameters
     + id (string)

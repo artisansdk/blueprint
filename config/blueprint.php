@@ -7,13 +7,13 @@ return [
     | Route to Docs
     |--------------------------------------------------------------------------
     |
-    | Find your rendered docs at the given path or set to false if you
-    | want to use your own route and controller.
+    | Find your rendered docs at the given path, action, and route or set path
+    | false if you want to use your own route and controller.
     |
     */
 
-    'action' => '\ArtisanSdk\Blueprint\Http\Controller@index'
-    'path'   => 'docs',
+    'action' => '\ArtisanSdk\Blueprint\Http\Controller@index',
+    'path'   => 'api/docs',
     'route'  => 'api.docs',
 
     /*
