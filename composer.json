@@ -1,0 +1,47 @@
+{
+    "name": "artisansdk/blueprint",
+    "description": "A render for API Blueprints compatible with Laravel.",
+    "keywords": [
+        "api",
+        "blueprint",
+        "renderer",
+        "laravel",
+        "docs"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/artisansdk/blueprint",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/config": "^5.4|^6.0",
+        "illuminate/support": "^5.4|^6.0",
+        "illuminate/routing": "^5.4|^6.0",
+        "illuminate/view": "^5.4|^6.0",
+        "hmaus/drafter-installer": "^1.0.1",
+        "hmaus/drafter-php": "^5.0",
+        "hmaus/reynaldo": "dev-Parameter-Number-bug",
+        "erusev/parsedown": "^1.7.0",
+        "erusev/parsedown-extra": "^0.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArtisanSdk\\Blueprint\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ArtisanSdk\\Blueprint\\Provider"
+            ]
+        },
+        "drafter-installer-tag": "v3.2.7"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/drakakisgeo/reynaldo"
+        }
+    ],
+    "scripts": {
+        "install-drafter": "Hmaus\\Drafter\\Installer::installDrafter"
+    }
+}
