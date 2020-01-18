@@ -1,3 +1,3 @@
 # Blueprint Docs
 
-A render for API Blueprints compatible with Laravel.
+A renderer for API Blueprints compatible with Laravel.
