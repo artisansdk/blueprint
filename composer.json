@@ -1,5 +1,6 @@
 {
     "name": "artisansdk/blueprint",
+    "type": "project",
     "description": "A render for API Blueprints compatible with Laravel.",
     "keywords": [
         "api",
@@ -47,6 +48,8 @@
         "process-timeout": 0,
         "sort-packages": true
     },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "extra": {
         "drafter-installer-tag": "v3.2.7",
         "laravel": {

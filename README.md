@@ -15,7 +15,7 @@ Blueprint can be installed as a standalone application, capable of developing
 locally and serving the static assets:
 
 ```bash
-composer create-application artisansdk/blueprint
+composer create-project artisansdk/blueprint
 ```
 
 The Blueprint package installs into a PHP application like any other PHP package:
