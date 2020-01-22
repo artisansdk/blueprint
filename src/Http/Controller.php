@@ -3,6 +3,7 @@
 namespace ArtisanSdk\Blueprint\Http;
 
 use ArtisanSdk\Blueprint\Service;
+use ArtisanSdk\Blueprint\Providers\Configs;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -16,7 +17,11 @@ class Controller extends BaseController
      */
     public function index(Service $service)
     {
+        $blueprint = $service
+            ->parse(config(Configs::PACKAGE.'::blueprint.manifest'))
+            ->api();
+
         return view('blueprint::index')
-            ->with('api', $service->parse(config('blueprint.manifest'))->api());
+            ->with('blueprint', $blueprint);
     }
 }

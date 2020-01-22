@@ -2,7 +2,7 @@
 
 namespace ArtisanSdk\Blueprint\Elements;
 
-class HrefVariable extends Mapping
+class Link extends Mapping
 {
     /**
      * @var string
@@ -45,7 +45,7 @@ class HrefVariable extends Mapping
     public $defaultValue;
 
     /**
-     * HrefVariable constructor
+     * Link constructor
      *
      * @param mixed $element
      * @param mixed $parent

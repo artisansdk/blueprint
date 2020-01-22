@@ -11,7 +11,7 @@
         <div class="panel-body collapse" role="tabpanel" aria-labelledby="panel-heading-0" id="collapse-0">
             <div class="tabs">
                 <ul class="nav stacked-tabs" role="tablist">
-                    @foreach ($api->descriptionHeadings->where('level', '<', 3) as $heading)
+                    @foreach ($blueprint->descriptionHeadings->where('level', '<', 3) as $heading)
                         <li role="presentation">
                             <a href="#{{ $heading->id }}">
                                 {{ $heading->text }}
@@ -23,12 +23,12 @@
         </div>
     </div>
 
-    @foreach ($api->resourceGroups as $resourceGroup)
+    @foreach ($blueprint->groups as $group)
         <div class="panel panel-collapsable">
             <div class="panel-heading" role="tab" id="panel-heading-{{ $loop->iteration }}">
                 <h4 class="panel-title">
-                    <a class="btn-block" role="button" data-toggle="collapse" data-group-id="{{ $resourceGroup->elementId }}" href="#collapse-{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse-{{ $loop->iteration }}">
-                        {{ $resourceGroup->name }}
+                    <a class="btn-block" role="button" data-toggle="collapse" data-group-id="{{ $group->elementId }}" href="#collapse-{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse-{{ $loop->iteration }}">
+                        {{ $group->name }}
                     </a>
                 </h4>
             </div>
@@ -36,7 +36,7 @@
             <div class="panel-body collapse in" role="tabpanel" aria-labelledby="panel-heading-{{ $loop->iteration }}" id="collapse-{{ $loop->iteration }}">
                 <div class="tabs">
                     <ul class="nav stacked-tabs" role="tablist">
-                        @foreach ($resourceGroup->resources as $resource)
+                        @foreach ($group->resources as $resource)
                             @if (config('blueprints.condensed'))
                                 <li role="presentation" class="resource">
                                     <a href="{{ $resource->elementLink }}">{{ $resource->name ?: 'Resource' }}</a>

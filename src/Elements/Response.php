@@ -4,22 +4,17 @@ namespace ArtisanSdk\Blueprint\Elements;
 
 use Illuminate\Support\Collection;
 
-class HttpRequest extends Mapping
+class Response extends Mapping
 {
     /**
-     * @var string
+     * @return int
      */
-    public $method;
+    public $statusCode;
 
     /**
      * @var \Illuminate\Support\Collection
      */
     public $headers;
-
-   /**
-     * @var string
-     */
-    public $contentType;
 
     /**
      * @var string
@@ -32,6 +27,11 @@ class HttpRequest extends Mapping
     public $messageBodySchema;
 
     /**
+     * @var string
+     */
+    public $dataStructure;
+
+    /**
      * @var boolean
      */
     public $hasContent;
@@ -39,15 +39,10 @@ class HttpRequest extends Mapping
 	/**
 	 * @var string
 	 */
-	public $title;
-
-    /**
-     * @var string
-     */
     public $description;
 
     /**
-     * Request constructor
+     * Response constructor
      *
      * @param mixed $element
      * @param mixed $parent
@@ -65,14 +60,13 @@ class HttpRequest extends Mapping
      */
     protected function setup()
     {
-        $this->method = $this->reynaldo->getMethod();
+        $this->statusCode = $this->reynaldo->getStatusCode();
         $this->headers = new Collection($this->reynaldo->getHeaders());
-        $this->contentType = $this->reynaldo->getContentType();
         $this->messageBody = $this->mapMessageBody();
         $this->messageBodySchema = $this->mapMessageBodySchema();
+        $this->dataStructure = $this->reynaldo->getDataStructure();
         $this->hasContent = $this->headers->count() || $this->messageBody || $this->messageBodySchema;
-	    $this->title = $this->reynaldo->getTitle();
-        $this->description = $this->reynaldo->getCopyText();
+	    $this->description = $this->reynaldo->getCopyText();
     }
 
     /**

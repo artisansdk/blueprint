@@ -5,7 +5,7 @@
             <td colspan="2">
                 <span class="method {{ $action->methodLower }}">{{ $action->method }}</span>
                 <span class="uri">
-                    <span class="hostname">{{ $api->host }}</span>{!! urldecode($action->colorizedUriTemplate) !!}
+                    <span class="hostname">{{ $blueprint->host }}</span>{!! urldecode($action->colorizedUriTemplate) !!}
                 </span>
             </td>
         </tr>

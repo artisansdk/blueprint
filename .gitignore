@@ -1,10 +1,8 @@
 /node_modules
 /vendor
-/public/css
-/public/js
-/public/fonts
-/public/mix-manifest.json
 .DS_Store
 .idea
 composer.lock
 package-lock.json
+blueprint.apib
+yarn.lock

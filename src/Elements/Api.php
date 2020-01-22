@@ -40,7 +40,7 @@ class Api
     /**
      * @var \Illuminate\Support\Collection
      */
-    public $resourceGroups;
+    public $groups;
 
     /**
      * @var \Hmaus\Reynaldo\Elements\ApiDescriptionRoot
@@ -76,7 +76,7 @@ class Api
         $this->meta = collect($this->refraction->getApiMetaData());
         $this->format = !empty($this->meta['FORMAT']) ? $this->meta['FORMAT'] : '';
         $this->host = !empty($this->meta['HOST']) ? $this->meta['HOST'] : '';
-        $this->resourceGroups = $this->mapResourceGroups();
+        $this->groups = $this->mapResourceGroups();
         $this->parseDescription();
     }
 
@@ -108,8 +108,9 @@ class Api
      */
     protected function mapResourceGroups()
     {
-        return collect($this->refraction->getResourceGroups())->map(function ($group) {
-            return new ResourceGroup($group);
-        });
+        return collect($this->refraction->getResourceGroups())
+            ->map(function ($group) {
+                return new Group($group);
+            });
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ArtisanSdk\Blueprint\Elements;
 
-class ResourceGroup extends Base
+class Group extends Base
 {
     /**
      * @var \Illuminate\Support\Collection
@@ -28,8 +28,8 @@ class ResourceGroup extends Base
     protected function mapResources()
     {
         return collect($this->reynaldo->getResources())
-            ->map(function ($reynaldoResource) {
-                return new Resource($reynaldoResource, $this);
+            ->map(function ($resource) {
+                return new Resource($resource, $this);
             });
     }
 }

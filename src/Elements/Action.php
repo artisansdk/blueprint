@@ -74,19 +74,19 @@ class Action extends Base
      */
     protected function mapParameters()
     {
-        $resourceParams = new Collection(
+        $resource = new Collection(
             $this->parent->reynaldo->getHrefVariablesElement()->getAllVariables()
         );
 
-        $actionParams = new Collection(
+        $action = new Collection(
             $this->reynaldo->getHrefVariablesElement()->getAllVariables()
         );
 
-        return $resourceParams->keyBy('name')
-            ->merge($actionParams->keyBy('name'))
+        return $resource->keyBy('name')
+            ->merge($action->keyBy('name'))
             ->flatten(1)
-            ->map(function($reynaldoHrefVariablesElement) {
-                return new HrefVariable($reynaldoHrefVariablesElement, $this);
+            ->map(function($element) {
+                return new Link($element, $this);
             });
     }
 
@@ -98,10 +98,10 @@ class Action extends Base
     protected function mapExamples()
     {
         return (new Collection($this->reynaldo->getHttpTransactions()))
-            ->map(function ($reynaldoTransaction) {
+            ->map(function ($transaction) {
                 return new Collection([
-                    'request' => new HttpRequest($reynaldoTransaction->getHttpRequest(), $this),
-                    'response' => new HttpResponse($reynaldoTransaction->getHttpResponse(), $this)
+                    'request' => new Request($transaction->getHttpRequest(), $this),
+                    'response' => new Response($transaction->getHttpResponse(), $this)
                 ]);
             });
     }

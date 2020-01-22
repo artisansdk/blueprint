@@ -36,12 +36,14 @@ return [
     |
     | Provide a fully qualified path to the API Blueprint or an array manifest
     | of fully qualified paths to API Blueprint partials in the order they
-    | should be combined to generate the full API Blueprint.
+    | should be combined to generate the full API Blueprint. You can use
+    | an absolute file path or a remote file URL.
     |
     */
 
     'manifest' => [
-        base_path('blueprint.apib'),
+        // base_path('blueprint.apib'),
+        'https://raw.githubusercontent.com/apiaryio/api-blueprint/master/examples/12.%20Advanced%20Action.md',
     ],
 
     /*
