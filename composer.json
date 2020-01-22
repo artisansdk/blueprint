@@ -33,15 +33,6 @@
     "bin": [
         "bin/blueprint"
     ],
-    "package": {
-        "name": "artisansdk/blueprint",
-        "version": "1.0.0",
-        "source": {
-            "url": "https://github.com/artisansdk/blueprint",
-            "type": "git",
-            "reference": "master"
-        }
-    },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
