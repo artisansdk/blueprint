@@ -2,7 +2,7 @@
 @import "highlight";
 
 pre {
-    border: 1px solid #e6e6e6;
+    border: 1px solid transparent;
 }
 
 .sidebar {
@@ -146,7 +146,7 @@ pre {
 }
 
 .panel-resource-group > .panel-heading .panel-title {
-    font-size: 18px;
+    font-size: 28px;
     line-height: 1.6;
 }
 
@@ -171,16 +171,35 @@ pre {
 }
 
 .panel-action {
+    box-shadow: none;
+    border: 0;
+    padding-top: 10px;
+    margin-bottom: 0;
+
+    .panel-body,
+    .panel-heading,
+    .panel-footer {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
     .panel-title {
         font-size: 15px;
         line-height: 1.6;
 
         .name {
-            float: right;
+            font-size: 18px;
             padding: 3px 0;
+            font-weight: bold;
+        }
+
+        .uri {
+            float: right;
+            display: inline-block;
         }
 
         .method {
+            float: right;
             display: inline-block;
             margin-right: 12px;
             padding: 3px 12px;
@@ -222,8 +241,22 @@ pre {
         }
     }
 
+    .panel-heading {
+        border: 0;
+        border-top: 1px solid #d3e0e9;
+        padding-top: 20px;
+        padding-bottom: 0;
+    }
+
+    .panel-body {
+        padding-bottom: 0;
+    }
+
     .panel-footer {
         background-color: #fff;
+        border: 0;
+        padding-top: 0;
+        padding-bottom: 0;
 
         .nav-pills > li.active > a,
         //.nav-pills>li.active>a:focus,

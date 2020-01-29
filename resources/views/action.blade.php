@@ -1,9 +1,9 @@
 <div class="panel panel-default panel-action">
     <div class="panel-heading">
         <h4 class="panel-title" id="{{ $action->elementId }}">
-            <span class="method {{ $action->methodLower }}">{{ $action->method }}</span>
-            <code class="uri">{!! urldecode($action->uriTemplate) !!}</code>
             <span class="name">{{ $action->name }}</span>
+            <code class="uri">{!! urldecode($action->uriTemplate) !!}</code>
+            <span class="method {{ $action->methodLower }}">{{ $action->method }}</span>
         </h4>
     </div>
     <div class="panel-body">
@@ -26,7 +26,6 @@
                         </li>
                     @endforeach
                 </ul>
-
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane" id="{{ $action->elementId }}-request">
                         @include('blueprint::content', ['requestresponse' => $action->examples->first()->get('request')])

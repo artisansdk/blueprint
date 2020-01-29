@@ -28,8 +28,8 @@ class Resource extends Base
     protected function mapActions()
     {
         return collect($this->reynaldo->getTransitions())
-            ->map(function ($reynaldoTransition) {
-                return new Action($reynaldoTransition, $this);
+            ->map(function ($transition) {
+                return new Action($transition, $this);
             });
     }
 }

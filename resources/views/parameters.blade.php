@@ -15,21 +15,19 @@
             <tr>
                 <td width="30%">
                     <strong>{{ $parameter->name }}</strong>
+                    &nbsp;<code>{{$parameter->type}}</code>
+                    @if ($parameter->required)
+                        &nbsp;({{ $parameter->required }})
+                    @endif
                 </td>
                 <td>
-                    <p>
-                        <code>{{$parameter->type}}</code>
-                        @if ($parameter->required)
-                            &nbsp;({{ $parameter->required }})
-                        @endif
-                        @if ($parameter->defaultValue)
-                            &nbsp;<span class="text-muted">Default: {{ $parameter->defaultValue }}</span>
-                        @endif
-                        @if ($parameter->example)
-                            &nbsp;<span class="text-muted">Example: {{ urldecode($parameter->example) }}</span>
-                        @endif
-                    </p>
                     {!! $parameter->descriptionHtml !!}
+                    @if ($parameter->defaultValue)
+                        <p><span class="text-muted">Default: {{ $parameter->defaultValue }}</span></p>
+                    @endif
+                    @if ($parameter->example)
+                        <p><span class="text-muted">Example: {{ urldecode($parameter->example) }}</span></p>
+                    @endif
                     @if (!empty($parameter->values))
                         <p class="choices">
                             <strong>Choices:</strong>&nbsp;
